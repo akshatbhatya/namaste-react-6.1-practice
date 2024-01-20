@@ -1,0 +1,16 @@
+.header_parent{
+    display: flex;
+    padding: 0px 20px;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+.navbar> ul{
+   display: flex;
+   gap: 10px;
+}
+.navbar> ul> li{
+    list-style: none;
+    cursor: pointer;
+}
