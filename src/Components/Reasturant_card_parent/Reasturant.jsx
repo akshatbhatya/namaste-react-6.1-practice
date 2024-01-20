@@ -31,7 +31,7 @@ function Reasturant() {
 
         }
         fetchData()
-    })
+    },[])
 
     if(product.length<=0){
         return <Shemmer/>
@@ -39,7 +39,8 @@ function Reasturant() {
     }
     
    let topRated=()=>{
-    product.filter((data)=>data.avgRating>4.4)
+    let toprated=product.filter((data)=>data.avgRating>4.4)
+    setSearchState(toprated)
    }
     
     let searchFilter=()=>{
