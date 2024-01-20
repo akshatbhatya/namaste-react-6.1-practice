@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "fetch data from live swiggy api and shemmer ui ad to app  and also add fitures like search bar and top rated filter button",
   "scripts": {
-    "start":"parcel index.html",
+    "start": "parcel index.html",
     "test": "jest"
   },
   "repository": {
@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/akshatbhatya/namaste-react-6.1-practice/issues"
   },
-  "homepage": "https://github.com/akshatbhatya/namaste-react-6.1-practice#readme"
+  "homepage": "https://github.com/akshatbhatya/namaste-react-6.1-practice#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
