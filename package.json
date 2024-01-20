@@ -2,8 +2,8 @@
   "name": "namaste-react-6.1-practice",
   "version": "1.0.0",
   "description": "fetch data from live swiggy api and shemmer ui ad to app  and also add fitures like search bar and top rated filter button",
-  "main": "index.js",
   "scripts": {
+    "start":"parcel index.html",
     "test": "jest"
   },
   "repository": {
