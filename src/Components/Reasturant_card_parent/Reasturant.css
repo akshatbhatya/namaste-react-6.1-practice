@@ -1,0 +1,5 @@
+.reasturant_parent{
+    padding: 0px 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
