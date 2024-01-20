@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./Reasturant.css"
 import Card from '../Card/Card'
+import Shemmer from '../Shemmer/Shemmer'
 
 let fetchUrl = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.3164945&lng=78.03219179999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
 function Reasturant() {
@@ -33,7 +34,7 @@ function Reasturant() {
     })
 
     if(product.length<=0){
-        console.log('not data');
+        return <Shemmer/>
         
     }
     
