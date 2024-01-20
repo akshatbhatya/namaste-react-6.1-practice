@@ -5,6 +5,8 @@ import Card from '../Card/Card'
 let fetchUrl = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.3164945&lng=78.03219179999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
 function Reasturant() {
     let [product, setProduct] = useState([])
+    let [search, setSearch] = useState("")
+    let [searchState,setSearchState]=useState([])
     useEffect(() => {
         let fetchData = async () => {
 
@@ -19,27 +21,52 @@ function Reasturant() {
                     allProductArray.push(responseData[i].info);
                 }
                 setProduct(allProductArray)
+                setSearchState(allProductArray)
             }
-             catch (error) {
+            catch (error) {
                 console.log(error);
 
             }
 
         }
         fetchData()
-
-        console.log(product);
     })
+
+    if(product.length<=0){
+        console.log('not data');
+        
+    }
+    
+   let topRated=()=>{
+    product.filter((data)=>data.avgRating>4.4)
+   }
+    
+    let searchFilter=()=>{
+        if(search==""){
+            setSearchState(product)
+            return
+
+        }
+        let sortedSerch=product.filter((product)=>product.name.toLowerCase().includes(search.toLowerCase()));
+        setSearchState(sortedSerch)
+    }
     return (
-        <div className='reasturant_parent'>
 
-            {
-                product.map((singleProduct)=>{
-                    return <Card singleProduct={singleProduct}/>
-                })
-            }
+        <>
+            <input type="text" placeholder='search here...' onChange={(e)=>setSearch(e.currentTarget.value)}/>
+            <button onClick={searchFilter}>search</button>
 
-        </div>
+            <button onClick={topRated}>topRated</button>
+            <div className='reasturant_parent'>
+
+                {
+                    searchState.map((singleProduct) => {
+                        return <Card singleProduct={singleProduct} key={singleProduct.id} />
+                    })
+                }
+
+            </div>
+        </>
     )
 }
 
